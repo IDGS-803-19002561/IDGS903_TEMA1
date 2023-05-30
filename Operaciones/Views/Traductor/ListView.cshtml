@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "ListView";
+    String[] data = new string[2];
+}
+
+<h2>Lista de Palabras</h2>
+
+
+<table class="table table-bordered table-hover w-100" >
+    <thead class="bg-primary">
+        <tr>
+            <th>Español</th>
+            <th>Inglés</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (string item in ViewBag.ListTraduc)
+        {
+            data = item.Split('|');
+
+            <tr>
+                <td>@data[0]</td>
+                <td>@data[1]</td>
+            </tr>
+        }
+    </tbody>
+</table>

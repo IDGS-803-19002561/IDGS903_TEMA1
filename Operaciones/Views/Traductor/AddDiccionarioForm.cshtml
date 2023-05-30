@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "AddDiccionarioForm";
+}
+
+@if (@ViewBag.SearchText == "")
+{
+    <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Resultado!</h4>
+        <p>Asegúrate de haber ingresado todos los datos correctamente</p>
+        <hr>
+        <p class="mb-0">
+            @Html.ActionLink("🔁 Intentar de nuevo", "SearchWork", "Traductor", new { area = "" }, new { @class = "btn btn-outline-dark mt-3" })
+        </p>
+    </div>
+}
+else if (@ViewBag.SearchText == "NO EXITE ESE VALOR")
+{
+    <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Resultado!</h4>
+        <p>No se encontraron coincidencias</p>
+        <hr>
+        <p class="mb-0">
+            @Html.ActionLink("🔁 Intentar de nuevo", "SearchWork", "Traductor", new { area = "" }, new { @class = "btn btn-outline-dark mt-3" })
+        </p>
+    </div>
+}
+else
+{
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Resultado!</h4>
+        <p>@ViewBag.SearchText</p>
+        <hr>
+        <p class="mb-0">
+            @Html.ActionLink("🔁 Intentar de nuevo", "SearchWork", "Traductor", new { area = "" }, new { @class = "btn btn-outline-dark mt-3" })
+        </p>
+    </div>
+}

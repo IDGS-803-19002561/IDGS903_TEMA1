@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Alumnos";
+}
+
+@model Operaciones.Models.Alumnos
+<h2>Alumnos</h2>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Nombre)
+    @Html.DisplayFor(model => model.Nombre)
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Edad)
+    @Html.DisplayFor(model => model.Edad)
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Activio)
+    @Html.DisplayFor(model => model.Activio)
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(model => model.Inscrito)
+    @Html.DisplayFor(model => model.Inscrito)
+</div>

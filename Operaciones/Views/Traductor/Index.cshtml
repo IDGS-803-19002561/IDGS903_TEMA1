@@ -1,0 +1,71 @@
+﻿@model Operaciones.Models.Traductor
+
+@{
+    ViewBag.Title = "Index";
+    String[] data = new string[2];
+}
+
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="text-uppercase bg-light p-2 mt-0 mb-3">Formulario Traductor</h5>
+                @using (Html.BeginForm("AddDiccionario", "Traductor"))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <form>
+                        <div class="row">
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.Español, htmlAttributes: new { @class = "form-label fw-bold" })
+                                @Html.EditorFor(model => model.Español, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Español, "", new { @class = "form-text text-danger" })
+                            </div>
+                            <div class="col-6">
+                                @Html.LabelFor(model => model.Ingles, htmlAttributes: new { @class = "form-label fw-bold" })
+                                @Html.EditorFor(model => model.Ingles, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Ingles, "", new { @class = "text-danger" })
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-success mt-3">💾 Guardar Palabras</button>
+                                @Html.ActionLink("🔁 Ir a Traductor", "SearchWork", "Traductor", new { area = "" }, new { @class = "btn btn-primary mt-3" })
+                            </div>
+                        </div>
+
+                    </form>
+                }
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="text-uppercase bg-light p-2 mt-0 mb-3">Lista de Palabras</h5>
+
+                <table class="table table-striped table-bordered table-hover w-100">
+                    <thead>
+                        <tr>
+                            <th>Español</th>
+                            <th>Inglés</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (string item in ViewBag.ListTraduc)
+                        {
+                            data = item.Split('|');
+
+                            <tr>
+                                <td>@data[0]</td>
+                                <td>@data[1]</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>

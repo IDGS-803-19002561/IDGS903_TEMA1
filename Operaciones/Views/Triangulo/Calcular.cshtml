@@ -1,0 +1,46 @@
+﻿@model Operaciones.Models.Triangulo
+
+@{
+    ViewBag.Title = "Calcular";
+}
+
+
+<div>
+
+    <div class="border p-3 mt-4 mt-lg-0 rounded">
+        <h2>Triangulo</h2>
+
+        <div class="table-responsive">
+            <table class="table mb-0">
+                <tbody>
+                    <tr>
+                        <th>LADO AB :</th>
+                        <td>@Html.DisplayFor(model => model.ab)</td>
+                    </tr>
+                    <tr>
+                        <th>LADO BC : </th>
+                        <td> @Html.DisplayFor(model => model.bc)</td>
+                    </tr>
+                    <tr>
+                        <th>LADO CA :</th>
+                        <td> @Html.DisplayFor(model => model.ac)</td>
+                    </tr>
+                    <tr>
+                        <th>AREA : </th>
+                        <td> @Html.DisplayFor(model => model.area)</td>
+                    </tr>
+                    <tr>
+                        <th>PERIMETRO :</th>
+                        <th> @Html.DisplayFor(model => model.perimetro)</th>
+                    </tr>
+                    <tr>
+                        <th>TIPO :</th>
+                        <th> @Html.DisplayFor(model => model.tipo)</th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+<p>
+    @Html.ActionLink("Calcular de Nuevo", "Index")
+</p>

@@ -1,0 +1,58 @@
+﻿@model Operaciones.Models.Maestro
+
+@{
+    ViewBag.Title = "LeerDAtos";
+}
+
+<h2>LeerDAtos</h2>
+
+<div>
+    <h4>Maestro</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Matricula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Matricula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Apaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Apaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Amaterno)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Amaterno)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

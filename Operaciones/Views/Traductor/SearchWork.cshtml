@@ -1,0 +1,46 @@
+﻿@model Operaciones.Models.Search
+
+@{
+    ViewBag.Title = "SearchWork";
+}
+
+<h2>SearchWork</h2>
+
+<div class="row mt-5">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+
+                <h5 class="text-uppercase bg-light p-2 mt-0 mb-3">Formulario Traductor</h5>
+                @using (Html.BeginForm("AddDiccionarioForm", "Traductor"))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label><b>Ingresa un valor:</b></label>
+                                @Html.EditorFor(model => model.Text, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Text, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <label><b>Selecciona una opción:</b></label> <br />
+                                @Html.RadioButtonFor(model => model.Type, "ingles", "select") Español <br />
+                                @Html.RadioButtonFor(model => model.Type, "español") Inglés<br />
+                            </div>
+                        </div>
+                        <div class="form-group mt-2">
+                            <input type="submit" value="Buscar 🔍" class="btn btn-success mt-3" />
+                            @Html.ActionLink("🔁 Ver Lista", "Index", "Traductor", new { area = "" }, new { @class = "btn btn-primary mt-3" })
+
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div>
+</div>

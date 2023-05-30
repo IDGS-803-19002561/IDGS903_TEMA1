@@ -1,0 +1,51 @@
+﻿
+
+@model Operaciones.Models.OperasBas
+
+@{
+    ViewBag.Title = "Ventana2";
+}
+
+<h2>Calculos</h2>
+<br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6">
+            <form action="/OperaBas/Index" method="post">
+                <div class="row">
+                    <div class="col-6">
+                        <label><b>Valor #1</b> </label>
+                        <input type="text" class="form-control" name="Num1" value="" />
+                    </div>
+                    <div class="col-6">
+                        <label><b>Valor #2</b> </label>
+                        <input type="text" class="form-control" name="Num2" value="" />
+                    </div>
+                    <div class="col-12 mt-3">
+                        <label><input type="radio" name="Operacion" value="1"> Suma</label><br>
+                        <label><input type="radio" name="Operacion" value="2"> Resta</label><br>
+                        <label><input type="radio" name="Operacion" value="3"> Multiplicación</label><br>
+                        <label><input type="radio" name="Operacion" value="4"> División</label><br>
+                    </div>
+
+
+                    <div class="col-12 mt-3">
+                        <input type="submit" name="name" class="btn btn-success" value="Enviar Formulario 📨" />
+                    </div>
+
+                </div>
+
+            </form>
+        </div>
+        <div class="col-lg-2">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Resultado :  @Html.DisplayFor(model => Model.Res)</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

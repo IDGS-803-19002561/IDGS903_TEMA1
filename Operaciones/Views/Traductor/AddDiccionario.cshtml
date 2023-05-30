@@ -1,0 +1,42 @@
+﻿@model Operaciones.Models.Traductor
+
+@{
+    ViewBag.Title = "AddDiccionario";
+}
+
+<h2>AddDiccionario</h2>
+
+<div>
+    <h4>Traductor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Español)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Español)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ingles)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ingles)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
